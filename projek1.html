@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARKholiday - Your Dream Vacation Awaits</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Manrope & Lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom styles to integrate the fonts */
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #F8FAFC; /* A very light gray for a soft feel */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Manrope', sans-serif;
+        }
+        .hero-bg {
+            background-image: url('https://placehold.co/1920x1080/a7d2e4/ffffff?text=Tropical+Paradise');
+        }
+        /* Styles for the carousel */
+        .carousel-container {
+            position: relative;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-item {
+            flex: 0 0 100%;
+        }
+        @media (min-width: 640px) {
+            .carousel-item {
+                flex: 0 0 50%;
+            }
+        }
+        @media (min-width: 1024px) {
+            .carousel-item {
+                flex: 0 0 33.3333%;
+            }
+        }
+        .carousel-item {
+            transition: transform 0.5s, opacity 0.5s;
+            transform: scale(0.9);
+            opacity: 0.6;
+        }
+        .carousel-item.focused {
+            transform: scale(1);
+            opacity: 1;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-cyan-600">ARKholiday</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#destinations" class="text-gray-600 hover:text-cyan-500 transition duration-300">Destinations</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-cyan-500 transition duration-300">Testimonials</a>
+                <a href="#contact" class="text-gray-600 hover:text-cyan-500 transition duration-300">Contact</a>
+            </div>
+            <a href="#contact" class="hidden md:block bg-amber-500 text-white font-bold py-2 px-6 rounded-full hover:bg-amber-600 transition duration-300 shadow-lg">
+                Book Now
+            </a>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#destinations" class="block py-2 text-gray-600 hover:text-cyan-500">Destinations</a>
+            <a href="#testimonials" class="block py-2 text-gray-600 hover:text-cyan-500">Testimonials</a>
+            <a href="#contact" class="block py-2 text-gray-600 hover:text-cyan-500">Contact</a>
+            <a href="#contact" class="block mt-2 bg-amber-500 text-white font-bold py-2 px-4 rounded-full text-center hover:bg-amber-600">Book Now</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg bg-cover bg-center h-[60vh] md:h-[80vh] flex items-center text-white">
+            <div class="container mx-auto px-6 text-center bg-black/30 py-12 rounded-xl">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">Your Dream Vacation Awaits</h1>
+                <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto drop-shadow-md">Discover unforgettable destinations and create timeless memories with ARKholiday.</p>
+                <a href="#destinations" class="bg-amber-500 text-white font-bold py-3 px-8 rounded-full hover:bg-amber-600 transition duration-300 text-lg shadow-xl">
+                    Explore Destinations
+                </a>
+            </div>
+        </section>
+
+        <!-- Destinations Section -->
+        <section id="destinations" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Popular Destinations</h2>
+                <div class="carousel-container overflow-hidden">
+                    <div id="destinations-track" class="carousel-track">
+                        <!-- Destination Card 1 -->
+                        <div class="carousel-item p-4">
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                                <img src="https://placehold.co/600x400/87CEEB/ffffff?text=Bali" alt="Bali, Indonesia" class="w-full h-56 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-2xl font-bold mb-2">Bali, Indonesia</h3>
+                                    <p class="text-gray-600 mb-4">Experience serene temples, lush rice paddies, and vibrant beaches.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-xl font-bold text-cyan-600">From $799</span>
+                                        <a href="#" class="text-amber-500 font-semibold hover:text-amber-600">Learn More &rarr;</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Destination Card 2 -->
+                        <div class="carousel-item p-4">
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                                <img src="https://placehold.co/600x400/E6E6FA/333333?text=Paris" alt="Paris, France" class="w-full h-56 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-2xl font-bold mb-2">Paris, France</h3>
+                                    <p class="text-gray-600 mb-4">Discover the city of love, with its iconic landmarks and romantic charm.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-xl font-bold text-cyan-600">From $1299</span>
+                                        <a href="#" class="text-amber-500 font-semibold hover:text-amber-600">Learn More &rarr;</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Destination Card 3 -->
+                        <div class="carousel-item p-4">
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                                <img src="https://placehold.co/600x400/FFB6C1/ffffff?text=Kyoto" alt="Kyoto, Japan" class="w-full h-56 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-2xl font-bold mb-2">Kyoto, Japan</h3>
+                                    <p class="text-gray-600 mb-4">Immerse yourself in ancient traditions, beautiful gardens, and stunning shrines.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-xl font-bold text-cyan-600">From $1499</span>
+                                        <a href="#" class="text-amber-500 font-semibold hover:text-amber-600">Learn More &rarr;</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         <!-- Destination Card 4 -->
+                        <div class="carousel-item p-4">
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                                <img src="https://placehold.co/600x400/90EE90/ffffff?text=Santorini" alt="Santorini, Greece" class="w-full h-56 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-2xl font-bold mb-2">Santorini, Greece</h3>
+                                    <p class="text-gray-600 mb-4">Witness breathtaking sunsets over the Aegean Sea from iconic white-washed villages.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-xl font-bold text-cyan-600">From $1199</span>
+                                        <a href="#" class="text-amber-500 font-semibold hover:text-amber-600">Learn More &rarr;</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-8 gap-4">
+                    <button id="prev-btn" class="bg-cyan-500 text-white p-3 rounded-full shadow-lg hover:bg-cyan-600 transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button id="next-btn" class="bg-cyan-500 text-white p-3 rounded-full shadow-lg hover:bg-cyan-600 transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20 bg-cyan-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">What Our Travelers Say</h2>
+                <div class="flex flex-col items-center justify-center mb-12">
+                    <div class="flex items-center">
+                        <span class="text-3xl font-extrabold text-cyan-600 mr-2">5.0</span>
+                        <div class="flex text-amber-400">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mt-1">Based on 3 reviews</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Testimonial Card 1 -->
+                    <div class="bg-white p-8 rounded-lg shadow-md flex flex-col">
+                        <div class="flex text-amber-400 mb-4">
+                            <!-- 5 Star Rating -->
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        </div>
+                        <p class="text-gray-600 italic mb-4 flex-grow">"The trip to Bali was perfectly organized. ARKholiday took care of everything, letting us just relax and enjoy. Highly recommende
